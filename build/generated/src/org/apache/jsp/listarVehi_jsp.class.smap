@@ -9,18 +9,26 @@ listarVehi.jsp
 csstemplate.jsp
 + 2 header.jsp
 incluidos/header.jsp
-+ 3 footer.jsp
++ 3 iconosNavBar.jsp
+incluidos/iconosNavBar.jsp
++ 4 listaNavBar.jsp
+incluidos/listaNavBar.jsp
++ 5 footer.jsp
 incluidos/footer.jsp
-+ 4 Js.jsp
++ 6 Js.jsp
 incluidos/Js.jsp
 *L
-5,13:52
-1#1,34:65
-17#0,5:99
-1#2,318:104
-21#0,351:422
-1#3,27:773
-371#0,2:800
-1#4,264:802
-372#0,3:1066
+5,13:54
+1#1,34:67
+17#0,5:101
+1#2,318:106
+21#0,13:424
+1#3,30:437
+33#0,3:467
+1#4,50:470
+35#0,260:520
+1#5,27:780
+294#0,2:807
+1#6,264:809
+295#0,3:1073
 *E

@@ -24,86 +24,9 @@
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
 
-				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
+				<%@include file="incluidos/iconosNavBar.jsp" %>
 
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
-
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
-
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
-
-				<ul class="nav nav-list">
-					<li class="">
-						<a href="index.jsp">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Inicio </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="active open">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-book"></i>
-							<span class="menu-text"> Gestionar Vehículos </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="active">
-								<a href="listarVehi.jsp">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Lista de Vehículos
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="registrarVehi.jsp">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Registrar Vehículo
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-                                                        <li class="">
-								<a href="registrarTv.jsp">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Registrar Tipo Vehículo
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-				</ul><!-- /.nav-list -->
+				<%@include file="incluidos/listaNavBar.jsp" %>
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
@@ -226,7 +149,7 @@
 										<!-- div.dataTables_borderWrap -->
 										<div>
                                                                                     <br><br>
-                                                                                    <form action="action" class="form-horizontal">
+                                                                                    <form action="tipovehi" class="form-horizontal" method="post">
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no-padding-right">
                                                                                                 ID Tipo Vehi
@@ -240,13 +163,17 @@
                                                                                                 Nombre Tipo Vehi
                                                                                             </label>
                                                                                             <div class="col-sm-9">
-                                                                                                <input type="text" name="txtidtv" value="" placeholder="ID Tipo Vehiculo">
+                                                                                                <input type="text" name="txtnomtv" value="" placeholder="ID Tipo Vehiculo">
                                                                                             </div>
                                                                                         </div>
                                                                                         
                                                                                         <button class="btn btn-success" type="submit">
                                                                                             <i class="fa fa-save"> Registrar</i>
                                                                                         </button>
+                                                                                        <div>
+                                                                                            <!--Mensaje para validar que se hizo un registro-->
+                                                                                            <%=(request.getAttribute("mensaje") !=null? request.getAttribute("mensaje"):"")%>
+                                                                                        </div>
                                                                                     </form>
 											
 										</div>

@@ -12,9 +12,11 @@ public final class listarVehi_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(4);
+    _jspx_dependants = new java.util.ArrayList<String>(6);
     _jspx_dependants.add("/csstemplate.jsp");
     _jspx_dependants.add("/incluidos/header.jsp");
+    _jspx_dependants.add("/incluidos/iconosNavBar.jsp");
+    _jspx_dependants.add("/incluidos/listaNavBar.jsp");
     _jspx_dependants.add("/incluidos/footer.jsp");
     _jspx_dependants.add("/incluidos/Js.jsp");
   }
@@ -431,7 +433,9 @@ public final class listarVehi_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\ttry{ace.settings.loadState('sidebar')}catch(e){}\n");
       out.write("\t\t\t\t</script>\n");
       out.write("\n");
-      out.write("\t\t\t\t<div class=\"sidebar-shortcuts\" id=\"sidebar-shortcuts\">\n");
+      out.write("                                ");
+      out.write("\n");
+      out.write("<div class=\"sidebar-shortcuts\" id=\"sidebar-shortcuts\">\n");
       out.write("\t\t\t\t\t<div class=\"sidebar-shortcuts-large\" id=\"sidebar-shortcuts-large\">\n");
       out.write("\t\t\t\t\t\t<button class=\"btn btn-success\">\n");
       out.write("\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-signal\"></i>\n");
@@ -459,9 +463,11 @@ public final class listarVehi_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\t\t\t\t\t\t<span class=\"btn btn-danger\"></span>\n");
       out.write("\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t</div><!-- /.sidebar-shortcuts -->\n");
+      out.write("\t\t\t\t</div><!-- /.sidebar-shortcuts -->");
       out.write("\n");
-      out.write("\t\t\t\t<ul class=\"nav nav-list\">\n");
+      out.write("                                \n");
+      out.write("                                ");
+      out.write("<ul class=\"nav nav-list\">\n");
       out.write("\t\t\t\t\t<li class=\"\">\n");
       out.write("\t\t\t\t\t\t<a href=\"listarVehi.jsp\">\n");
       out.write("\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-tachometer\"></i>\n");
@@ -510,7 +516,8 @@ public final class listarVehi_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</li>\n");
       out.write("\n");
-      out.write("\t\t\t\t</ul><!-- /.nav-list -->\n");
+      out.write("\t\t\t\t</ul><!-- /.nav-list -->");
+      out.write("\t\t\t\n");
       out.write("\n");
       out.write("\t\t\t\t<div class=\"sidebar-toggle sidebar-collapse\" id=\"sidebar-collapse\">\n");
       out.write("\t\t\t\t\t<i id=\"sidebar-toggle-icon\" class=\"ace-icon fa fa-angle-double-left ace-save-state\" data-icon1=\"ace-icon fa fa-angle-double-left\" data-icon2=\"ace-icon fa fa-angle-double-right\"></i>\n");

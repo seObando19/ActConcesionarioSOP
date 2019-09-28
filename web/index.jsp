@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <header>       
+            <h1>Hello World!</h1>
+            <jsp:forward page="listarVehi.jsp"></jsp:forward>
+        </header>
     </body>
 </html>
