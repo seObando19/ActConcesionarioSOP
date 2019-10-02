@@ -8,13 +8,45 @@
         <servlet-name>vehiControlador</servlet-name>
         <servlet-class>Controlador.vehiControlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>tipconducControlador</servlet-name>
+        <servlet-class>Controlador.tipconducControlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>rutaControlador</servlet-name>
+        <servlet-class>Controlador.rutaControlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>contratoControlador</servlet-name>
+        <servlet-class>Controlador.contratoControlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>conductorControlador</servlet-name>
+        <servlet-class>Controlador.conductorControlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>tipvehiControlador</servlet-name>
         <url-pattern>/tipovehi</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>vehiControlador</servlet-name>
-        <url-pattern>/vehiControlador</url-pattern>
+        <url-pattern>/vehiculo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tipconducControlador</servlet-name>
+        <url-pattern>/tipconducControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rutaControlador</servlet-name>
+        <url-pattern>/rutaControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>contratoControlador</servlet-name>
+        <url-pattern>/contratoControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>conductorControlador</servlet-name>
+        <url-pattern>/conductorControlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
