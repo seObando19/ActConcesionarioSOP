@@ -68,7 +68,7 @@ public class vehiControlador extends HttpServlet {
         String marca = request.getParameter("txtmarcaVehi");
         String referencia = request.getParameter("txtreferenciaVehi");
         int modelo = Integer.parseInt(request.getParameter("txtmodeloVehi"));
-        int idtv = Integer.parseInt(request.getParameter(""));
+        int idtv = Integer.parseInt(request.getParameter("txtidtv"));
         
         //Tomar el parametro que va a tener la accion (registrar,actualizar  eliminar)
         String accion = request.getParameter("accion").toLowerCase();
@@ -82,9 +82,7 @@ public class vehiControlador extends HttpServlet {
         vehi.setIdTipoV(idtv);
         
         //validar cual es la accion que se va a gestionar(va a controlar)
-        if(accion.equals("registrar")){
-            
-        }
+        //if(accion.equals("registrar")){}
         
         switch(accion){
             case "registrar":
@@ -94,10 +92,33 @@ public class vehiControlador extends HttpServlet {
                     request.setAttribute("mensaje", "Vehiculo no registrado");
                 }
                 break;
-            case "insertar":
+            case "actualizar":
+                if(vehiculoDao.actualizarvehi(vehi)){
+                    request.setAttribute("mensaje", "Vehiculo actualizado");
+                }else{
+                    request.setAttribute("mensaje", "Vehiculo no actualizado");
+                }
+                break;                
+            case "eliminar":
+                if(vehiculoDao.eliminarVehi(vehi)){
+                    request.setAttribute("mensaje", "Vehiculo eliminado");
+                }else{
+                    request.setAttribute("mensaje", "Vehiculo no eliminado");
+                }
                 break;
+            case "eliminaruno":
+                if(vehiculoDao.eliminarVehi(vehi)){
+                String placaUno = request.getParameter("txtvUno");
+                vehi.setPlacaVehi(placaUno);
+                vehiculoDao.eliminarVehiuno(placaUno);                
+                    request.setAttribute("mensaje", "Vehiculo eliminado");
+                }else{
+                    request.setAttribute("mensaje", "Vehiculo no eliminado");
+                }
+                break;
+            
         }
-        
+        request.getRequestDispatcher("registrarVehi.jsp").forward(request, response);        
     }
 
     /**

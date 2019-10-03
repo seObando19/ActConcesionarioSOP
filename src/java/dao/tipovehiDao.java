@@ -57,7 +57,28 @@ public class tipovehiDao {
         } catch (SQLException ex) {
             return null;
         }
-    } 
+    }
+    
+    //Metodo para mostrar los tipos de vehiculos en la vista del listado(Traer al formulario inf en este caso tipo vehiculo)
+    public static String getTipoVehi(int IdTV){
+        try {
+            String sqlTvForVehi = "select nomtv from tipovehi where idTV=?";
+            Connection conex = librConexion.conectarDB();
+            PreparedStatement st = conex.prepareStatement(sqlTvForVehi);
+            
+            //Enviar el paramatro IDTV
+            st.setInt(1, IdTV);
+            ResultSet resultado = st.executeQuery();
+            
+            //Verificar si existen los TV y traer su nombre
+            if(resultado.next()){
+                return resultado.getString("nomTv");
+            }
+            return "--";
+        } catch (SQLException ex) {
+            return "--";
+        }
+    }
     
     
 }

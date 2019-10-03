@@ -4,6 +4,8 @@
     Author     : sebas
 --%>
 
+<%@page import="dao.tipovehiDao"%>
+<%@page import="modelo.tipovehi"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -155,7 +157,7 @@
 										<!-- div.dataTables_borderWrap -->
                                                                                 <div>
                                                                                     <br><br>
-                                                                                        <form action="action" class="form-horizontal">
+                                                                                    <form action="vehiculo" method="post" class="form-horizontal">
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no-padding-right">
                                                                                                 Placa del vehiculo
@@ -188,9 +190,31 @@
                                                                                                 <input type="text" name="txtmodeloVehi" value="" placeholder="Modelo del vehiculo">
                                                                                             </div>
                                                                                         </div>
-                                                                                        <button class="btn btn-success" type="submit">
+                                                                                        <div class="form-group">
+                                                                                            <label class="col-sm-3 control-label no-padding-right">
+                                                                                                ID tipo Vehiculo
+                                                                                            </label>
+                                                                                            <div class="col-sm-9">
+                                                                                                <select name="txtidtv">
+                                                                                                    <option value="0">Seleccione un tipo de Vehiculo</option>
+                                                                                                    <%for (tipovehi tv:tipovehiDao.listartv()) {%>
+                                                                                                    <option value="<%= tv.getIdtv() %>"><%= tv.getNomtv() %></option>
+                                                                                                    <% } %>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                                <button name="accion" class="btn btn-success" type="submit" value="registrar">
                                                                                             <i class="fa fa-save"> Registrar</i>
                                                                                         </button>
+                                                                                        <button name="accion" class="btn btn-warning" type="submit" value="actualizar">
+                                                                                            <i class="fa fa-edit"> Actualizar</i>
+                                                                                        </button>
+                                                                                        <button  name="accion" class="btn btn-danger" type="submit" value="eliminar">
+                                                                                            <i class="fa fa-clock-o"> Eliminar</i>
+                                                                                        </button>                                                                                             
+                                                                                                <div>
+                                                                                                    <%=(request.getAttribute("mensaje") !=null? request.getAttribute("mensaje"):"")%>
+                                                                                                </div>
                                                                                     </form>
 											
                                                                                 </div>

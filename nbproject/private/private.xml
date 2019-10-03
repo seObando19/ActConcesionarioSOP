@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/Controlador/tipconducControlador.java</file>
+            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/Controlador/vehiControlador.java</file>
             <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/modelo/vehiculo.java</file>
-            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/modelo/tipovehi.java</file>
-            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/Controlador/tipvehiControlador.java</file>
-            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/modelo/tipoConductor.java</file>
-            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/dao/tipoConductorDao.java</file>
-            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/dao/tipovehiDao.java</file>
+            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/web/registrarVehi.jsp</file>
+            <file>file:/C:/Users/sebas/Documents/NetBeansProjects/concesionarioSOP/src/java/dao/vehiculoDao.java</file>
         </group>
     </open-files>
 </project-private>
