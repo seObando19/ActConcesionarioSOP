@@ -76,9 +76,9 @@ public class rutaControlador extends HttpServlet {
         //processRequest(request, response);
         
         //Recibir los datos
-        int idRuta = Integer.parseInt(request.getParameter("idRuta"));
-        String estacion = request.getParameter("estacion");
-        String placaVehi =request.getParameter("placaVehi");
+        int idRuta = Integer.parseInt(request.getParameter("txtruta"));
+        String estacion = request.getParameter("txtestacion");
+        String placaVehi =request.getParameter("txtidvehi");
         
         //Pasando los datos al modelo
         ruta Ruta = new ruta();
@@ -89,9 +89,9 @@ public class rutaControlador extends HttpServlet {
         if(rutaDao.insertarRuta(Ruta)){
             request.setAttribute("mensaje", "Ruta registrada");
         }else{
-            request.setAttribute("mensaje", "No Ruta registrada");
+            request.setAttribute("mensaje", "Ruta no registrada");
         }
-        request.getRequestDispatcher("?").forward(request, response);
+        request.getRequestDispatcher("registraRuta.jsp").forward(request, response);
     }
 
     /**

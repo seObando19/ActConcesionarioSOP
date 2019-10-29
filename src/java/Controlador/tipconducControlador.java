@@ -6,6 +6,7 @@
 package Controlador;
 
 import dao.tipoConductorDao;
+import dao.vehiculoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -76,20 +77,41 @@ public class tipconducControlador extends HttpServlet {
         //processRequest(request, response);
         
         //Recibir datos
-        int idtipoCon = Integer.parseInt(request.getParameter("idtipoCon"));
-        String nombre = request.getParameter("nombre");
+        int idtipoCon = Integer.parseInt(request.getParameter("txtidtipCond"));
+        String nombre = request.getParameter("txtnomtipCond");
+        
+        //Tomar el parametro que va a tener la accion (registrar,actualizar  eliminar)
+        String accion = request.getParameter("accion").toLowerCase();
         
         //pasando los datos al modelo
         tipoConductor tipoconductor = new tipoConductor();
         tipoconductor.setIdtipoCon(idtipoCon);
         tipoconductor.setNombre(nombre);
         
-        if(tipoConductorDao.insertartipConductor(tipoconductor)){
-            request.setAttribute("mensaje", "Tipo Conductor registrado");
-        }else{
-            request.setAttribute("mensaje", "Tipo Conductor no registrado");
+        switch(accion){
+            case "registrar":
+                if(tipoConductorDao.insertartipConductor(tipoconductor)){
+                    request.setAttribute("mensaje", "Tipo conductor registrado");
+                }else{
+                    request.setAttribute("mensaje", "Tipo conductor no registrado");
+                }
+                break;
+            case "actualizar":
+                if(tipoConductorDao.actualizarTC(tipoconductor)){
+                    request.setAttribute("mensaje", "Tipo conductor actualizado");
+                }else{
+                    request.setAttribute("mensaje", "Tipo conductor no actualizado");
+                }
+                break;                
+            case "eliminar":
+                if(tipoConductorDao.eliminarTC(tipoconductor)){
+                    request.setAttribute("mensaje", "Tipo conductor eliminado");
+                }else{
+                    request.setAttribute("mensaje", "Tipo conductor no eliminado");
+                }
+                break;           
         }
-        request.getRequestDispatcher("?").forward(request, response);
+        request.getRequestDispatcher("tipoconductor.jsp").forward(request, response);
     }
 
     /**

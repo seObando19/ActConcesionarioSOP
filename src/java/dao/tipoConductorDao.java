@@ -35,7 +35,8 @@ public class tipoConductorDao {
         }
     }
     
-        public static ArrayList<tipoConductor> listartipoConductor(){
+    //metodo SELECT
+    public static ArrayList<tipoConductor> listartipoConductor(){
         try {
             String SQLQueryListartipoconductor = "SELECT *FROM tipoconductor";
             Connection conex = librConexion.conectarDB();
@@ -54,6 +55,46 @@ public class tipoConductorDao {
             
         } catch (SQLException ex) {
             return null;
+        }
+    }
+    
+    //metodo UPDATE
+    public static boolean actualizarTC(tipoConductor cond){
+        try {
+            Connection conex = librConexion.conectarDB();
+            String SQL ="UPDATE tipoconductor SET " +
+                                "   nombre=?" +
+                                "WHERE idtipoCon=?";
+            PreparedStatement st = conex.prepareStatement(SQL);
+            
+            st.setString(1, cond.getNombre());
+            st.setInt(2, cond.getIdtipoCon());
+            
+            if(st.executeUpdate() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
+    //metodo DELETE
+    public static boolean eliminarTC(tipoConductor cond){
+        try {
+            Connection conex = librConexion.conectarDB();
+            String SQL = "DELETE FROM tipoconductor WHERE idtipoCon=?";
+            PreparedStatement st = conex.prepareStatement(SQL);
+            
+            if(st.executeUpdate() > 0){
+                return true;
+            }else{
+                return false;
+            }
+            
+        } catch (SQLException ex) {
+            return false;
         }
     }
 }

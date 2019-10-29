@@ -59,6 +59,46 @@ public class tipovehiDao {
         }
     }
     
+    //metodo Update
+    public static boolean actualizarTv(tipovehi tv){
+        try {
+            Connection conex = librConexion.conectarDB();
+            String SQL = "UPDATE tipovehi SET " +
+                         "  nomtv=?" +
+                         "  WHERE idtv=?";
+            PreparedStatement st = conex.prepareStatement(SQL);
+            
+            st.setString(1, tv.getNomtv());
+            st.setInt(2, tv.getIdtv());
+            
+            if(st.executeUpdate() > 0){
+                return true;
+            }else{
+                return false;
+            }            
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
+    //metodo eliminar
+    public static boolean eliminarTv(tipovehi tv){
+        try {
+            Connection conex = librConexion.conectarDB();
+            String SQL = "SELECT FROM tipovehi WHERE idtv=?";
+            PreparedStatement st = conex.prepareStatement(SQL);
+            st.setInt(1, tv.getIdtv());
+            
+            if(st.executeUpdate() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    
     //Metodo para mostrar los tipos de vehiculos en la vista del listado(Traer al formulario inf en este caso tipo vehiculo)
     public static String getTipoVehi(int IdTV){
         try {

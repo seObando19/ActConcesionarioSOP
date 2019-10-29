@@ -1,3 +1,5 @@
+<%@page import="modelo.conductor"%>
+<%@page import="dao.conductorDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -149,15 +151,7 @@
 										<!-- div.dataTables_borderWrap -->
 										<div>
                                                                                     <br><br>
-                                                                                    <form action="tipovehi" class="form-horizontal" method="post">
-                                                                                        <div class="form-group">
-                                                                                            <label class="col-sm-3 control-label no-padding-right">
-                                                                                                ID Conductor
-                                                                                            </label>
-                                                                                            <div class="col-sm-9">
-                                                                                                <input type="text" name="txtcontrato" value="" placeholder="ID Contrato">
-                                                                                            </div>
-                                                                                        </div>
+                                                                                    <form action="tipovehi" class="form-horizontal" method="post">                                                                                        
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no-padding-right">
                                                                                                 ID Conductor
@@ -187,11 +181,9 @@
                                                                                                 Placa Vehiculo
                                                                                             </label>
                                                                                             <div class="col-sm-9">
-                                                                                                <select name="txtplacvehi">
-                                                                                                    <option value="0">Seleccione un vehiculo</option>                                                                                                    
-                                                                                                </select>
+                                                                                                <input type="text" name="txtplacvehi" value="" placeholder="Placa vehiculo">
                                                                                             </div>
-                                                                                        </div>
+                                                                                        </div>                                                                                        
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no-padding-right">
                                                                                                 ID tipo Conductor
@@ -199,6 +191,9 @@
                                                                                             <div class="col-sm-9">
                                                                                                 <select name="txtidCond">                                                                                                    
                                                                                                     <option value="0">Seleccione un vehiculo</option>           
+                                                                                                    <%for (conductor cond:conductorDao.listarConductor()) {%>
+                                                                                                    <option value="<%= cond.getIdConductor() %>"><%= cond.getNombre() %></option>
+                                                                                                    <% } %>
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>

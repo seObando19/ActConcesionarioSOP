@@ -203,7 +203,7 @@
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
-                                                                                                <button name="accion" class="btn btn-success" type="submit" value="registrar">
+                                                                                        <button name="accion" class="btn btn-success" type="submit" value="registrar">
                                                                                             <i class="fa fa-save"> Registrar</i>
                                                                                         </button>
                                                                                         <button name="accion" class="btn btn-warning" type="submit" value="actualizar">

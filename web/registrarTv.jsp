@@ -167,8 +167,14 @@
                                                                                             </div>
                                                                                         </div>
                                                                                         
-                                                                                        <button class="btn btn-success" type="submit">
+                                                                                        <button name="accion" class="btn btn-success" type="submit" value="registrar">
                                                                                             <i class="fa fa-save"> Registrar</i>
+                                                                                        </button>
+                                                                                        <button name="accion" class="btn btn-warning" type="submit" value="actualizar">
+                                                                                            <i class="fa fa-edit"> Actualizar</i>
+                                                                                        </button>
+                                                                                        <button  name="accion" class="btn btn-danger" type="submit" value="eliminar">
+                                                                                            <i class="fa fa-clock-o"> Eliminar</i>
                                                                                         </button>
                                                                                         <div>
                                                                                             <!--Mensaje para validar que se hizo un registro-->

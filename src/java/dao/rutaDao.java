@@ -24,14 +24,15 @@ public class rutaDao {
     //medoto INSERT
     public static boolean insertarRuta(ruta rut){
         try {
-            Connection conex = librConexion.conectarDB();
-            String SQLQueryinsertRuta = "INSERT INTO ruta (idRuta,estacion,placaVehi) VALUES(?,?,?)";
+            Connection conex = librConexion.conectarDB();            
+            String SQLQueryinsertRuta = "INSERT INTO ruta (idRuta,estacion,idVehi) VALUES(?,?,?)";
             PreparedStatement ps = conex.prepareStatement(SQLQueryinsertRuta);
             ps.setInt(1,rut.getIdRuta());
             ps.setString(2,rut.getEstacion());
-            ps.setString(3,rut.getPlacaVehi());            
+            ps.setString(3,rut.getPlacaVehi());
             
             return ps.executeUpdate()> 0;
+            
         } catch (SQLException ex) {
             return false;
         }

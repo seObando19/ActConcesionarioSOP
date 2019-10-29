@@ -33,20 +33,20 @@
         <url-pattern>/vehiculo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>tipconducControlador</servlet-name>
-        <url-pattern>/tipconducControlador</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>rutaControlador</servlet-name>
-        <url-pattern>/rutaControlador</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>contratoControlador</servlet-name>
         <url-pattern>/contratoControlador</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>conductorControlador</servlet-name>
         <url-pattern>/conductorControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tipconducControlador</servlet-name>
+        <url-pattern>/tipoConductor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rutaControlador</servlet-name>
+        <url-pattern>/ruta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -24,7 +24,7 @@ public class librConexion {
             String dbUrl = "jdbc:mysql://localhost:3306/";
             
             //Datos db
-            String dbName = "concesionario";
+            String dbName = "concesionarioFlota";
             String dbUser = "root";
             String dbPassword = "";
             

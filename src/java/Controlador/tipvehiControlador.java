@@ -6,6 +6,7 @@
 package Controlador;
 
 import dao.tipovehiDao;
+import dao.vehiculoDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -78,15 +79,36 @@ public class tipvehiControlador extends HttpServlet {
         int IdTv = Integer.parseInt(request.getParameter("txtidtv"));
         String NomTv = request.getParameter("txtnomtv");
         
+        //Tomar el parametro que va tener la accion
+        String accion = request.getParameter("accion").toLowerCase();
+        
         //pasando los datos al modelo
         tipovehi tipoVehi = new tipovehi();
         tipoVehi.setIdtv(IdTv);
         tipoVehi.setNomtv(NomTv);        
         
-        if(tipovehiDao.insertartv(tipoVehi)){
-            request.setAttribute("mensaje", "Tipo Vehiculo registrado");
-        }else{
-            request.setAttribute("mensaje", "Tipo Vehiculo no registrado");
+        switch(accion){
+            case "registrar":
+                if(tipovehiDao.insertartv(tipoVehi)){
+                    request.setAttribute("mensaje", "Tipo Vehiculo registrado");
+                }else{
+                    request.setAttribute("mensaje", "Tipo Vehiculo no registrado");
+                }
+                break;
+            case "actualizar":
+                if(tipovehiDao.actualizarTv(tipoVehi)){
+                    request.setAttribute("mensaje", "Tipo vehiculo actualizado");
+                }else{
+                    request.setAttribute("mensaje", "Tipo vehiculo no actualizado");
+                }
+                break;                
+            case "eliminar":
+                if(tipovehiDao.eliminarTv(tipoVehi)){
+                    request.setAttribute("mensaje", "Tipo vehiculo eliminado");
+                }else{
+                    request.setAttribute("mensaje", "Tipo vehiculo no eliminado");
+                }
+                break;         
         }
         
         request.getRequestDispatcher("registrarTv.jsp").forward(request, response);

@@ -1,3 +1,5 @@
+<%@page import="dao.vehiculoDao"%>
+<%@page import="modelo.vehiculo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -149,7 +151,7 @@
 										<!-- div.dataTables_borderWrap -->
 										<div>
                                                                                     <br><br>
-                                                                                    <form action="tipovehi" class="form-horizontal" method="post">
+                                                                                    <form action="ruta" class="form-horizontal" method="post">
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no-padding-right">
                                                                                                 ID Ruta
@@ -168,12 +170,10 @@
                                                                                         </div>                                                                                        
                                                                                         <div class="form-group">
                                                                                             <label class="col-sm-3 control-label no-padding-right">
-                                                                                                ID Vehiculo
+                                                                                                Placa Vehiculo
                                                                                             </label>
                                                                                             <div class="col-sm-9">
-                                                                                                <select name="txtidvehi">
-                                                                                                    <option value="0">Seleccione un tipo de Vehiculo</option>                                                                                                    
-                                                                                                </select>
+                                                                                                <input type="text" name="txtidvehi" value="" placeholder="Placa Vehiculo">
                                                                                             </div>
                                                                                         </div>
                                                                                         
